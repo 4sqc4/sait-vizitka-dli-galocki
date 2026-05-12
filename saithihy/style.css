@@ -1,0 +1,94 @@
+:root {
+    --primary: #4f46e5;
+    --bg: #f9fafb;
+    --card-bg: #ffffff;
+    --text: #1f2937;
+    --border: #e5e7eb;
+}
+
+body.dark {
+    --bg: #111827;
+    --card-bg: #1f2937;
+    --text: #f9fafb;
+    --border: #374151;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+}
+
+nav {
+    display: flex; /* Flexbox для навигации  */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.nav-links a.active { color: var(--primary); }
+
+/* Эффект при наведении [cite: 58] */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.project-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: 0.3s;
+}
+
+.projects-grid {
+    display: flex; /* Flexbox для сетки проектов  */
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 2rem;
+}
+
+.projects-grid > div {
+    flex: 1 1 calc(33.333% - 20px);
+    min-width: 250px;
+}
+
+.skill-badge {
+    background: var(--primary);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+#theme-toggle {
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    color: var(--text);
+}
